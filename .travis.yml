@@ -10,7 +10,7 @@ before_deploy:
 deploy:
   provider: script
   script:
-    docker push ronaldoalm1812/api-spring-boot;
+    docker push ronaldoalm1812/api-spring-boot:latest;
   on:
     branch: master
 notifications:
