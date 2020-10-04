@@ -1,0 +1,63 @@
+version: '3.4'
+
+services:
+    db:
+        container_name: postgres_container_spring
+        image: postgres
+        environment:
+            TZ: America/Sao_Paulo 
+            POSTGRES_DB: rest
+            POSTGRES_USER: ${POSTGRES_USER:-postgres}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-12345678}
+        volumes:
+            - postgres:/data/postgres
+        ports:
+            - "5432:5432"
+        networks:
+            - udemy-network
+        restart: always
+
+    api-spring-boot:
+        container_name: api-spring-boot
+        image:  ronaldoalm1812/api-spring-boot
+        restart: always
+        build: ./curso_udemy_spring
+        working_dir: /curso_udemy_spring
+        environment: 
+            TZ: America/Sao_Paulo
+            SPRING_BOOT_ENVIRONMENT: Production
+        volumes:
+            -  ./curso_udemy_spring:/curso_udemy_spring
+            - ~/.m2:/root/.m2
+        ports:
+            - "8080:8080"
+        command: mvn clean spring-boot:run
+        links:
+            - db
+        depends_on:
+            - db
+        networks:
+            - udemy-network
+
+    pgadmin:
+        container_name: pgadmin_container
+        image: dpage/pgadmin4
+        environment:
+            TZ: America/Sao_Paulo
+            PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-innolab@gmail.com}
+            PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-postgres}
+        volumes:
+            - pgadmin:/root/.pgadmin
+        ports:
+            - "${PGADMIN_PORT:-5050}:80"
+        networks:
+            - udemy-network
+        depends_on: 
+            - api-spring-boot
+        restart: always
+networks:
+    udemy-network:
+        driver: bridge
+volumes:
+    postgres:
+    pgadmin:

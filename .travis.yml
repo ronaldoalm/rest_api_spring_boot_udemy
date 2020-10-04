@@ -1,0 +1,17 @@
+language: bash
+services: docker
+before_install:
+	- cd /home/ronaldo/rest_api_spring_boot_udemy/API/curso_udemy_spring
+	- echo "We are in the Docker Folder!"
+script:
+	- docker-compose build
+before_deploy:
+	- echo "${DOCKER_PASSORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
+deploy:
+	provider: script
+	script:
+		docker push ronaldoalm1812/api-spring-boot;
+		on:
+			branch: master
+notifications:
+	email: false
