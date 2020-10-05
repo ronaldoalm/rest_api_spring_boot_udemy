@@ -56,7 +56,7 @@ Now just run Main.java as: Run as -> Java Application.
 * Docker-Compose
 
 ## Production setup
-
+Access the directory of ```docker-compose.yml``` and exec the command ```sudo docker-compose up```
 
 ## Meta
 
