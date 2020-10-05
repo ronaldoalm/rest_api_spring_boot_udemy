@@ -1,11 +1,6 @@
 
 # Spring Boot 2.1.3
 ## Curso Udemy - REST API's RESTFul do 0 à AWS Com Spring Boot 2.x e Docker
-> Short blurb about what your product does.
-
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
 ![](header.png)
 
@@ -50,6 +45,13 @@ Além disso, altere as credenciais do Flyway no arquivo pom.xml
 
 Agora basta executar o Main.java como: Run as --> Java Application.
 
+
+## Pré-requisitos modo produção Windows/Linux:
+* Java 11
+* Apache Maven 3.6.3
+* Docker-Compose
+
+## Production setup
 
 
 ## Meta
