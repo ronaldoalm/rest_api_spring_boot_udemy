@@ -2,7 +2,7 @@
 # Spring Boot 2.1.3
 ## Curso Udemy - REST API's RESTFul do 0 à AWS Com Spring Boot 2.x e Docker
 
-![](header.png)
+
 
 This project can be used as a base implementation for other API's.
 
@@ -26,11 +26,11 @@ This project can be used as a base implementation for other API's.
 
 ## Setup
 
-To run on Eclipse it is necessary to adjust the database settings in the directory  ```src / main / resources / application.properties```, change the following lines:
+To run on Eclipse it is necessary to adjust the database settings in the directory  ```src/main/resources/application.properties```, change the following lines:
 ```sh
-spring.datasource.url= jdbc:postgresql://URL_BANCO_DEDADOS:PORTA_BANCO_DE_DADOS/NOME_DO_BANCO_DE_DADOS
-spring.datasource.username=USUARIO_DO_BANCO
-spring.datasource.password=SENHA_DO_BANCO
+spring.datasource.url= jdbc:postgresql://URL_DB:PORT_DB/NAME_DB
+spring.datasource.username=USER_DB
+spring.datasource.password=PASSWORD_DB
 ```
 
 Also, change Flyway credentials in the pom.xml file
@@ -38,13 +38,16 @@ Also, change Flyway credentials in the pom.xml file
 ```sh
 
 <configuration>
-  <url>jdbc:postgresql://URL_BANCO_DEDADOS:PORTA_BANCO_DE_DADOS/NOME_DO_BANCO_DE_DADOS?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</url>
-  <user>USUARIO_DO_BANCO</user>
-  <password>SENHA_DO_BANCO</password>
+  <url>jdbc:postgresql://URL_DB:PORT_DB/NAME_DB?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</url>
+  <user>USER_DB</user>
+  <password>PASSWORD_DB</password>
 </configuration>
 ```
 
-Agora basta executar o Main.java como: Run as --> Java Application.
+
+Now just run Main.java as: Run as -> Java Application.
+
+![](execmain.png)
 
 
 ## Requirements for production environment:
@@ -53,7 +56,7 @@ Agora basta executar o Main.java como: Run as --> Java Application.
 * Docker-Compose
 
 ## Production setup
-
+Access the directory of ```docker-compose.yml``` and exec the command ```sudo docker-compose up```
 
 ## Meta
 
