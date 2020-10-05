@@ -2,7 +2,7 @@
 # Spring Boot 2.1.3
 ## Curso Udemy - REST API's RESTFul do 0 à AWS Com Spring Boot 2.x e Docker
 
-![](header.png)
+
 
 This project can be used as a base implementation for other API's.
 
@@ -44,7 +44,10 @@ Also, change Flyway credentials in the pom.xml file
 </configuration>
 ```
 
-Agora basta executar o Main.java como: Run as --> Java Application.
+
+Now just run Main.java as: Run as -> Java Application.
+
+![](execmain.png)
 
 
 ## Requirements for production environment:
