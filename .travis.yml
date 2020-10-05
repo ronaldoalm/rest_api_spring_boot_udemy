@@ -8,9 +8,10 @@ script:
 before_deploy:
   - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
 deploy:
-  provider: script
+- provider: script
   script:
     docker push ronaldoalm1812/api-spring-boot:latest;
+  skip_cleanup: true
   on:
     branch: master
 notifications:
