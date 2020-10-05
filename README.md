@@ -7,16 +7,16 @@
 This project can be used as a base implementation for other API's.
 
 ## Content:
-    * Implementação de DTO's
-    * Versionamento da API
-    * Migrations com Flyway
-    * Content Negotioation(Json,XML,YAML)
-    * Implementação de Hateoas
-    * Suporte a Swagger
-    * Autenticação com JWT e Spring Security
-    * Integração com Travis CI e docker-compose
-    * Configuração para CORS
-    * Paginação
+   * Implementation of DTO's
+   * API versioning
+   * Migrations with Flyway
+   * Content Negotioation (Json, XML, YAML)
+   * Implementation of Hateoas
+   * Swagger support
+   * Authentication with JWT and Spring Security
+   * Integration with Travis CI and docker-compose
+   * Configuration for CORS
+   * Pagination
 
 ## Requirements for development environment:
 * Java 11
@@ -26,7 +26,7 @@ This project can be used as a base implementation for other API's.
 
 ## Setup
 
-Para rodar no Eclipse é necessário ajustar as configurações do banco de dados no diretório ```src/main/resources/application.properties```, altere as seguintes linhas:
+To run on Eclipse it is necessary to adjust the database settings in the directory  ```src / main / resources / application.properties```, change the following lines:
 ```sh
 spring.datasource.url= jdbc:postgresql://URL_BANCO_DEDADOS:PORTA_BANCO_DE_DADOS/NOME_DO_BANCO_DE_DADOS
 spring.datasource.username=USUARIO_DO_BANCO
