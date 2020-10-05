@@ -14,7 +14,7 @@ deploy:
   script:
     docker push ronaldoalm1812/api-spring-boot:latest;
     docker push registry.heroku.com/$HEROKU_APP/api-spring-boot;
-    heroku container:release web --app $HEROKU_APP
+    heroku container:release api-spring-boot --app $HEROKU_APP
   on:
     all_branches: true
 notifications:
