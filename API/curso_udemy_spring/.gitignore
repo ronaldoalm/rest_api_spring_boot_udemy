@@ -1,7 +1,11 @@
 # Eclipse
+/target/
 .classpath
+.springBeans
 .project
 .settings/
+.gradle
+/build/
 
 # Intellij
 .idea/

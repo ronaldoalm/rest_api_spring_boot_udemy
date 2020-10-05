@@ -6,7 +6,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.erudio.converter.DozerConverter;
@@ -41,8 +42,24 @@ public class PersonServices {
 		return personConverter.convertEntityToVO(personRepository.save(person));
 	}
 	
-	public List<PersonVOV1> findAll() {
-		return DozerConverter.parseListObjects(personRepository.findAll(), PersonVOV1.class) ;
+	public List<PersonVOV1> findAll(Pageable pageable) {
+		List<Person> persons = personRepository.findAll(pageable).getContent();
+		return DozerConverter.parseListObjects(persons, PersonVOV1.class) ;
+	}
+	
+	public Page<PersonVOV1> findAllBypage(Pageable pageable) {
+		var page = personRepository.findAll(pageable);
+		return page.map(this::convertToPersonVOV1) ;
+	}
+	
+	public Page<PersonVOV1> findPersonByName(String firstName, Pageable pageable) {
+		var page = personRepository.findPersonByName(firstName, pageable);
+		return page.map(this::convertToPersonVOV1) ;
+	}
+
+	
+	private PersonVOV1 convertToPersonVOV1(Person person) {
+		return DozerConverter.parseObject(person, PersonVOV1.class);
 	}
 
 	public PersonVOV1 update(PersonVOV1 p) {
