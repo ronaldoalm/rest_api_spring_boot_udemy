@@ -4,7 +4,7 @@
 
 ![](header.png)
 
-Este projeto pode ser utilizado como implementação base para outras API's.
+This project can be used as a base implementation for other API's.
 
 ## Content:
     * Implementação de DTO's
@@ -18,12 +18,13 @@ Este projeto pode ser utilizado como implementação base para outras API's.
     * Configuração para CORS
     * Paginação
 
-## Pré-requisitos modo desenvolvimento usando o Eclipse 20-09 no Windows/Linux:
+## Requirements for development environment:
 * Java 11
 * Apache Maven 3.6.3
 * Postgres
+* Eclipse (20-09)
 
-## Development setup
+## Setup
 
 Para rodar no Eclipse é necessário ajustar as configurações do banco de dados no diretório ```src/main/resources/application.properties```, altere as seguintes linhas:
 ```sh
@@ -32,7 +33,7 @@ spring.datasource.username=USUARIO_DO_BANCO
 spring.datasource.password=SENHA_DO_BANCO
 ```
 
-Além disso, altere as credenciais do Flyway no arquivo pom.xml
+Also, change Flyway credentials in the pom.xml file
 
 ```sh
 
@@ -46,7 +47,7 @@ Além disso, altere as credenciais do Flyway no arquivo pom.xml
 Agora basta executar o Main.java como: Run as --> Java Application.
 
 
-## Pré-requisitos modo produção Windows/Linux:
+## Requirements for production environment:
 * Java 11
 * Apache Maven 3.6.3
 * Docker-Compose
