@@ -24,6 +24,17 @@ public class UploadFileResponse extends ResourceSupport implements Serializable 
 	public String getFileName() {
 		return fileName;
 	}
+	
+	
+
+	public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size) {
+		this.fileName = fileName;
+		this.fileDownloadUri = fileDownloadUri;
+		this.fileType = fileType;
+		this.size = size;
+	}
+
+
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
