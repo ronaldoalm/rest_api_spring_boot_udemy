@@ -3,19 +3,19 @@ jdk:
   - openjdk11
 services:
   - docker
- env:
-   global:
-     secure: $DOCKER_PASSWORD
-     secure: $DOCKER_USERNAME
-     secure: $HEROKU_API_KEY
-     secure: $HEROKU_LOGIN
-     secure: $HEROKU_APP
+env:
+  global:
+    secure:$DOCKER_PASSWORD
+    secure:$DOCKER_USERNAME
+    secure:$HEROKU_API_KEY
+    secure:$HEROKU_LOGIN
+    secure:$HEROKU_APP
 # replace the following env configurations with your own
 before_install:
   - docker pull openjdk:11
   - cd API/
   - echo "We are in the Docker folder!!!"
-#Build SpringBoot app
+#Build SpringBoot
 script:
   - mvn clean package
 # Create Docker image for our app and push it to Dockerhub repository and send messages to the Teams channel after the `script` job is successfully executed
