@@ -3,32 +3,18 @@ jdk:
   - openjdk11
 services:
   - docker
-env:
-  global:
-    secure:$DOCKER_PASSWORD
-    secure:$DOCKER_USERNAME
-    secure:$HEROKU_API_KEY
-    secure:$HEROKU_LOGIN
-    secure:$HEROKU_APP
-# replace the following env configurations with your own
 before_install:
-  - docker pull openjdk:11
-  - cd API/curso_udemy_spring/
+  - cd API/
   - echo "We are in the Docker folder!!!"
-#Build SpringBoot
 script:
-  - mvn clean package
-# Create Docker image for our app and push it to Dockerhub repository and send messages to the Teams channel after the `script` job is successfully executed
-after_success:
-  - cd /home/travis/build/ronaldoalm/rest_api_spring_boot_udemy/API/
-  - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
   - docker-compose build
-  - docker push ronaldoalm1812/api-spring-boot:latest;
-# Allow Travis to help deploy the app on Heroku
+  - docker tag ronaldoalm1812/api-spring-boot:latest registry.heroku.com/$HEROKU_APP/api-spring-boot
+before_deploy:
+  - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
 deploy:
-  provider: heroku
-  api-key:
-    secure: $HEROKU_API_KEY
-  app: obscure-island-85296
+- provider: heroku
+  script:
+    docker push ronaldoalm1812/api-spring-boot:latest;
   on:
     all_branches: true
+notifications:
