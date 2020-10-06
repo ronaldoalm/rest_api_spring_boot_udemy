@@ -1,6 +1,6 @@
 
 # Spring Boot 2.1.3
-## Curso Udemy - REST API's RESTFul do 0 à AWS Com Spring Boot 2.x e Docker
+## Curso Udemy - REST API's RESTFul do 0 à AWS With Spring Boot 2.x e Docker
 
 
 
@@ -17,6 +17,7 @@ This project can be used as a base implementation for other API's.
    * Integration with Travis CI and docker-compose
    * Configuration for CORS
    * Pagination
+   * Upload Files
 
 ## Requirements for development environment:
 * Java 11
