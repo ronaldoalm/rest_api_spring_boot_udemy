@@ -15,7 +15,7 @@ before_install:
   - docker pull openjdk:11
   - cd API/
   - echo "We are in the Docker folder!!!"
-# Test & Build SpringBoot app
+#Build SpringBoot app
 script:
   - mvn clean package
 # Create Docker image for our app and push it to Dockerhub repository and send messages to the Teams channel after the `script` job is successfully executed
