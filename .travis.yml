@@ -29,6 +29,6 @@ deploy:
   provider: heroku
   api-key:
     secure: $HEROKU_API_KEY
-  app: $HEROKU_APP
+  app: obscure-island-85296
   on:
     all_branches: true
