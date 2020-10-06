@@ -32,4 +32,4 @@ deploy:
   app: $HEROKU_APP
   on:
     tags: true
-    repo: api-spring-boot
+    repo: ronaldoalm1812/api-spring-boot
