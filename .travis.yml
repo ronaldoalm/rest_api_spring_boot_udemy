@@ -13,13 +13,15 @@ env:
 # replace the following env configurations with your own
 before_install:
   - docker pull openjdk:11
-  - cd API/
+  - cd API/curso_udemy_spring/
   - echo "We are in the Docker folder!!!"
 #Build SpringBoot
 script:
   - mvn clean package
 # Create Docker image for our app and push it to Dockerhub repository and send messages to the Teams channel after the `script` job is successfully executed
 after_success:
+  - cd ..
+  - echo pwd
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - docker-compose build
   - docker push ronaldoalm1812/api-spring-boot:latest;
