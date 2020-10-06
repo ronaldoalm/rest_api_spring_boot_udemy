@@ -20,9 +20,8 @@ script:
   - mvn clean package
 # Create Docker image for our app and push it to Dockerhub repository and send messages to the Teams channel after the `script` job is successfully executed
 after_success:
-  - cd ..
-  - echo pwd
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - cd /home/travis/build/ronaldoalm/rest_api_spring_boot_udemy/API/
+  - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
   - docker-compose build
   - docker push ronaldoalm1812/api-spring-boot:latest;
 # Allow Travis to help deploy the app on Heroku
