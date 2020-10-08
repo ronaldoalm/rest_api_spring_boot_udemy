@@ -38,6 +38,24 @@ This project can be used as a base implementation for other API's.
       height="40"
     />
   </a>
+  
+   <a href="https://spring.io/projects/spring-boot" target="_blank">
+    <img
+      src="https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg"
+      alt="aws"
+      width="120"
+      height="40"
+    />
+  </a>
+  
+   <a href="https://spring.io/projects/spring-boot" target="_blank">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/pt/3/30/Java_programming_language_logo.svg"
+      alt="aws"
+      width="40"
+      height="40"
+    />
+  </a>
 </p>
 
 
@@ -52,7 +70,7 @@ This project can be used as a base implementation for other API's.
    * Integration with Travis CI and docker-compose
    * Configuration for CORS
    * Pagination
-   * Upload Files
+   * Upload and Download Files
 
 ## Requirements for development environment:
 * Java 11
