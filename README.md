@@ -6,6 +6,41 @@
 
 This project can be used as a base implementation for other API's.
 
+### Languages and Tools
+
+<br/>
+
+<p align="left">
+
+  <a href="https://www.docker.com/" target="_blank">
+    <img
+      src="https://devicons.github.io/devicon/devicon.git/icons/docker/docker-original-wordmark.svg"
+      alt="docker"
+      width="40"
+      height="40"
+    />
+  </a>
+  
+  <a href="https://www.eclipse.org/downloads/" target="_blank">
+    <img
+      src="https://www.eclipse.org/downloads/assets/public/images/logo-eclipse.png"
+      alt="jenkins"
+      width="40"
+      height="40"
+    />
+  </a>
+
+  <a href="https://www.postgresql.org" target="_blank">
+    <img
+      src="https://devicons.github.io/devicon/devicon.git/icons/postgresql/postgresql-original-wordmark.svg"
+      alt="postgresql"
+      width="40"
+      height="40"
+    />
+  </a>
+</p>
+
+
 ## Content:
    * Implementation of DTO's
    * API versioning
