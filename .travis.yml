@@ -1,20 +1,17 @@
-language: java
-jdk:
-  - openjdk11
-services:
-  - docker
+language: bash
+services: docker
 before_install:
   - cd API/
   - echo "We are in the Docker folder!!!"
 script:
   - docker-compose build
-  - docker tag ronaldoalm1812/api-spring-boot:latest registry.heroku.com/$HEROKU_APP/api-spring-boot
 before_deploy:
-  - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
+  - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
 deploy:
-- provider: heroku
+  provider: script
   script:
     docker push ronaldoalm1812/api-spring-boot:latest;
   on:
-    all_branches: true
+    branch: main
 notifications:
+  email: false
