@@ -42,7 +42,7 @@ public class BookController {
 	private PagedResourcesAssembler<BookVOV1> assembler;
 
 	@ApiOperation(value = "Find all Books")
-	@GetMapping(value = "/v1", produces = { "application/json", "application/xml" })
+	@GetMapping(value = "/v3", produces = { "application/json", "application/xml" })
 	public List<BookVOV1> findAll() {
 		List<BookVOV1> bookVOV1 = bookServices.findAll();
 		bookVOV1.stream()
